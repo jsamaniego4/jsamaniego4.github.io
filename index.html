@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jorge Samaniego | Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #0b0f19; color: #e7eaf3; }
+    a { color: #7aa2ff; text-decoration: none; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px; }
+    .card { background: #121a2a; border: 1px solid #25304a; border-radius: 14px; padding: 18px; }
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .pill { display: inline-block; padding: 6px 10px; border-radius: 999px; background: #18223a; border: 1px solid #25304a; margin: 4px 6px 0 0; font-size: 12px; }
+    .muted { color: #b4bdd6; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+    h1 { margin: 0 0 6px; font-size: 34px; }
+    h2 { margin: 22px 0 10px; font-size: 18px; letter-spacing: 0.6px; }
+    h3 { margin: 0 0 6px; font-size: 16px; }
+    .btn { display: inline-block; padding: 10px 12px; border-radius: 10px; background: #1b2a4a; border: 1px solid #2a3a61; }
+    .btn:hover { filter: brightness(1.1); }
+    footer { margin-top: 26px; color: #9aa6c7; font-size: 12px; }
+    code { background: #0f1526; padding: 2px 6px; border-radius: 6px; border: 1px solid #25304a; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="row">
+        <div>
+          <h1>Jorge Samaniego</h1>
+          <div class="muted">Software Engineering + AI | Medford, NY | U.S. Citizen</div>
+          <div class="muted" style="margin-top:6px;">
+            <a href="mailto:jorgemsamaniego@gmail.com">jorgemsamaniego@gmail.com</a> ·
+            <a href="tel:+16315783517">631 578 3517</a> ·
+            <a href="#" target="_blank" rel="noreferrer">GitHub</a> ·
+            <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+        <div>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Download Resume</a>
+        </div>
+      </div>
+
+      <p style="margin-top:14px;" class="muted">
+        I build data driven systems and AI powered tools, including semantic search, machine learning pipelines,
+        and performance focused algorithms.
+      </p>
+
+      <div>
+        <span class="pill">Java</span>
+        <span class="pill">Python</span>
+        <span class="pill">SQL</span>
+        <span class="pill">React</span>
+        <span class="pill">AWS</span>
+        <span class="pill">scikit-learn</span>
+        <span class="pill">NLP</span>
+        <span class="pill">Vector Search</span>
+      </div>
+    </div>
+
+    <h2>PROJECTS</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>AI Photo Selector</h3>
+        <div class="muted">Python · OpenAI API · Vector Embeddings · Semantic Search</div>
+        <p class="muted">
+          Natural language photo search that ranks results by semantic similarity. Built an embedding pipeline and
+          similarity scoring to retrieve relevant images quickly.
+        </p>
+        <div class="row">
+          <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Stock Market Predictor</h3>
+        <div class="muted">Python · Pandas · scikit-learn · Model Benchmarking</div>
+        <p class="muted">
+          ML pipeline comparing multiple models for prediction on historical market data. Includes preprocessing,
+          evaluation, and performance comparison.
+        </p>
+        <div class="row">
+          <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Report</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Word Lookup Dictionary</h3>
+        <div class="muted">Python · Trie · Edit Distance · Web Scraping</div>
+        <p class="muted">
+          Desktop word lookup with Trie based autocomplete and spelling correction using edit distance.
+          Data ingestion via scraping and structured parsing.
+        </p>
+        <div class="row">
+          <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Demo Video</a>
+        </div>
+      </div>
+    </div>
+
+    <h2>EXPERIENCE</h2>
+    <div class="card">
+      <h3>IT Intern, Tech Solutions 2020</h3>
+      <div class="muted">May 2025 – Aug 2025 · Melville, NY</div>
+      <ul class="muted">
+        <li>Deployed 50+ Windows 11 machines and configured user environments for client onboarding.</li>
+        <li>Installed industry software, enabled remote support, and assisted with on site server and basic networking.</li>
+        <li>Streamlined provisioning workflow to improve deployment throughput.</li>
+      </ul>
+    </div>
+
+    <h2>CONTACT</h2>
+    <div class="card">
+      <div class="muted">If you want to reach me quickly, email is best.</div>
+      <p style="margin:10px 0 0;">
+        <a class="btn" href="mailto:jorgemsamaniego@gmail.com?subject=Internship%20Opportunity">Email Me</a>
+      </p>
+    </div>
+
+    <footer>
+      Built with plain HTML. Deploy via GitHub Pages. Replace placeholder links with your real GitHub, LinkedIn, and project URLs.
+    </footer>
+  </div>
+</body>
+</html>
