@@ -123,6 +123,13 @@ section{padding-block:76px 0}
 .side{align-self:start}
 @media (max-width:1000px){.proj{grid-template-columns:1fr;gap:20px}.proj .meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}}
 
+.shot{margin:0 0 16px;border:1px solid var(--rule);background:var(--panel);max-width:360px;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s}
+.shot .top{display:flex;align-items:center;gap:12px;padding:9px 12px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.shot .dots{display:flex;gap:5px}
+.shot .dots i{width:7px;height:7px;border:1px solid var(--rule-hi)}
+.shot .dots i:first-child{background:var(--orange);border-color:var(--orange)}
+.shot img{display:block;width:100%;height:auto}
+.shot:hover{transform:translateY(-3px);border-color:var(--orange)}
 .readout{border:1px solid var(--rule);background:var(--panel)}
 .readout .top{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
 .readout .body{padding:14px}
@@ -309,6 +316,10 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
         <br><a class="link" href="https://github.com/jsamaniego4/Mirror72" target="_blank" rel="noopener">Source →</a>
       </div>
       <div class="side">
+        <figure class="shot">
+          <div class="top"><span class="dots"><i></i><i></i><i></i></span><span>mirror72 / sign-in</span></div>
+          <img src="assets/mirror72-signin.jpg" width="720" height="1000" alt="Mirror72 sign-in screen: logo, tagline 'Predict your next 72 hours', Google sign-in and email login" loading="lazy">
+        </figure>
         <div class="readout">
           <div class="top"><span>Forecast · 72h</span><span style="color:var(--orange)">Sample</span></div>
           <div class="body">
