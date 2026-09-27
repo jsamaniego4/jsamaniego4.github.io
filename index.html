@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add("js")</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Jorge Samaniego - software engineer. Production Java for the Linux Foundation's Zowe SDK, full-stack AI applications, and enterprise infrastructure.">
@@ -206,6 +207,32 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
 .stack-groups{display:grid;gap:34px}
 .stack-groups h3{margin:0 0 12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);font-weight:500}
 .stack-note{margin:14px 0 0;font-size:14px;color:var(--dim);line-height:1.7}
+/* motion — only when JS is on and the viewer hasn't asked for reduced motion */
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--orange);transform:scaleX(0);transform-origin:0 50%;z-index:1000;pointer-events:none}
+.shead{position:relative}
+.shead::after{content:"";position:absolute;left:0;bottom:-2px;width:72px;height:2px;background:var(--orange)}
+.brand{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s}
+.brand::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-110%);pointer-events:none}
+.brand:hover{transform:translateY(-3px);border-color:var(--orange)}
+.brand:hover::after{transform:translateX(110%);transition:transform .8s ease}
+@media (prefers-reduced-motion:no-preference){
+  html.js .hero .left > *,html.js .hero .right > *{opacity:0;transform:translateY(18px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  html.js .hero .left > :nth-child(2){animation-delay:.08s}
+  html.js .hero .left > :nth-child(3){animation-delay:.2s}
+  html.js .hero .left > :nth-child(4){animation-delay:.3s}
+  html.js .hero .left > :nth-child(5){animation-delay:.4s}
+  html.js .hero .right > :nth-child(1){animation-delay:.25s}
+  html.js .hero .right > :nth-child(2){animation-delay:.45s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  html.js .term .ln{opacity:0;animation:type .01s steps(1) forwards}
+  @keyframes type{to{opacity:1}}
+  html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  html.js .reveal.in{opacity:1;transform:none}
+  html.js .shead::after{transform:scaleX(0);transform-origin:0 50%;transition:transform 1s cubic-bezier(.7,0,.2,1) .2s}
+  html.js .shead.in::after{transform:scaleX(1)}
+  .avail i{animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 5px rgba(79,211,126,.18)}}
+}
 </style>
 
 <header class="bar">
@@ -515,5 +542,47 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
   </div>
 </footer>
 
+<div class="progress" aria-hidden="true"></div>
+<script>
+(() => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const bar = document.querySelector('.progress');
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+  };
+  addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+  if (still) return;
+
+  // Terminal prints line by line after the hero settles
+  const pre = document.querySelector('.term pre');
+  if (pre) pre.innerHTML = pre.innerHTML.split('\n')
+    .map((l, i) => `<span class="ln" style="animation-delay:${0.7 + i * 0.28}s">${l}</span>`).join('\n');
+
+  // Count metrics up from zero when they come into view
+  const countUp = el => {
+    const m = el.textContent.match(/^([\d,]+)(\+?)$/);
+    if (!m) return;
+    const end = +m[1].replace(/,/g, ''), t0 = performance.now(), dur = 1400;
+    const tick = t => {
+      const p = Math.min((t - t0) / dur, 1), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+      el.textContent = v.toLocaleString('en-US') + m[2];
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const targets = document.querySelectorAll('.shead, .proj, .job, .stack-groups > *, .edu > *, .metrics');
+  targets.forEach(el => { if (!el.matches('.shead, .metrics')) el.classList.add('reveal'); });
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    if (e.target.matches('.metrics')) e.target.querySelectorAll('b').forEach(countUp);
+    io.unobserve(e.target);
+  }), {threshold: 0.15, rootMargin: '0px 0px -40px 0px'});
+  targets.forEach(el => io.observe(el));
+})();
+</script>
 </body>
 </html>
