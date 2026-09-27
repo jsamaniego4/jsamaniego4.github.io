@@ -79,6 +79,11 @@ h1 em{font-style:normal;color:var(--orange)}
 .term .o{color:var(--orange)} .term .w{color:var(--ink)} .term .g{color:var(--green)} .term .s{color:var(--steel)}
 .cursor{display:inline-block;width:8px;height:14px;background:var(--orange);vertical-align:-2px}
 @media (prefers-reduced-motion:no-preference){.cursor{animation:blink 1.1s steps(1) infinite}@keyframes blink{50%{opacity:0}}}
+.brand{border:1px solid var(--rule)}
+.brand img{display:block;width:100%;height:auto;background:#fff;padding:18px 20px;box-sizing:border-box}
+.brand .lf{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--panel);border-top:1px solid var(--rule);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.brand .lf svg{width:18px;height:18px;fill:#fff;flex:none}
+.brand .lf b{color:var(--ink);font-weight:600}
 .specs{border:1px solid var(--rule)}
 .specs div{display:flex;justify-content:space-between;gap:12px;padding:11px 14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:12px}
 .specs div:first-child{border-top:0}
@@ -319,6 +324,10 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
         <a class="link" href="https://github.com/zowe/zowe-client-java-sdk" target="_blank" rel="noopener">Upstream repo →</a>
       </div>
       <div class="side">
+        <div class="brand">
+          <img src="assets/zowe-logo.png" width="440" height="160" alt="Zowe, an Open Mainframe Project" loading="lazy">
+          <div class="lf"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linuxfoundation"/></svg><span>A <b>Linux Foundation</b> Project</span></div>
+        </div>
         <dl class="specs">
           <div><dt>Project</dt><dd>Open Mainframe</dd></div>
           <div><dt>Language</dt><dd>Java 21</dd></div>
