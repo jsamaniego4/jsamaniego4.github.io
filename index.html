@@ -60,6 +60,19 @@ header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:f
 .avail{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--rule-hi);padding:6px 12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
 .avail i{width:7px;height:7px;background:var(--green)}
 h1{font-size:clamp(42px,7vw,86px);line-height:.94;letter-spacing:-.035em;font-weight:800;font-stretch:112%;text-transform:uppercase;margin:26px 0 0}
+.name{display:flex;align-items:center;gap:clamp(16px,2.4vw,28px);margin-top:26px}
+.name h1{margin:0;font-size:clamp(38px,4.3vw,62px)}
+.hero .left{min-width:0}
+@media (max-width:920px){.name h1{font-size:clamp(38px,6.4vw,74px)}}
+@media (max-width:520px){.name{flex-direction:column;align-items:flex-start;gap:18px}.name h1{font-size:clamp(34px,11vw,42px)}}
+.pfp{position:relative;flex:none;width:clamp(120px,12vw,176px);aspect-ratio:1;padding:5px;border:1px solid var(--rule-hi)}
+.pfp img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(.25) contrast(1.04);transition:filter .5s}
+.pfp::before,.pfp::after{content:"";position:absolute;width:20px;height:20px;border:2px solid var(--orange);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.pfp::before{top:-3px;left:-3px;border-right:0;border-bottom:0}
+.pfp::after{bottom:-3px;right:-3px;border-left:0;border-top:0}
+.pfp:hover img{filter:none}
+.pfp:hover::before{transform:translate(-4px,-4px)}
+.pfp:hover::after{transform:translate(4px,4px)}
 h1 em{font-style:normal;color:var(--orange)}
 .subhead{font-family:var(--mono);font-size:13.5px;letter-spacing:.06em;color:var(--dim);margin:20px 0 26px;text-transform:uppercase}
 .subhead b{color:var(--ink);font-weight:500}
@@ -72,6 +85,22 @@ h1 em{font-style:normal;color:var(--orange)}
 .acts a.solid{background:var(--orange);color:#0C0D0F;font-weight:700}
 .acts a.solid:hover{background:#FF7438;color:#0C0D0F}
 .acts svg{width:15px;height:15px}
+.acts a.prof{gap:11px;padding:9px 18px 9px 16px;align-items:center}
+.acts a.prof svg{width:20px;height:20px;fill:currentColor;flex:none;transition:color .2s}
+.prof .t{display:grid;line-height:1.3;text-align:left}
+.prof .t b{font-weight:600;color:var(--ink);transition:color .2s}
+.prof .t small{font-size:10.5px;letter-spacing:.04em;text-transform:none;color:var(--faint);transition:color .2s}
+.prof .arr{margin-left:4px;color:var(--faint);transition:transform .25s,color .2s}
+.prof.li svg{color:#0A66C2}
+.acts a.prof.li:hover{background:#0A66C2;color:#fff}
+.acts a.prof.gh:hover{background:var(--ink);color:#0C0D0F}
+.acts a.prof:hover svg,.acts a.prof:hover .t b,.acts a.prof:hover .t small,.acts a.prof:hover .arr{color:inherit}
+.acts a.prof:hover .t small{opacity:.8}
+.acts a.prof:hover .arr{transform:translate(2px,-2px)}
+.school{display:inline-flex;align-items:center;gap:9px}
+.school .seal{width:20px;height:20px;border-radius:50%;background:#fff;padding:1px;flex:none}
+h3.school{gap:12px}
+h3.school .seal{width:34px;height:34px}
 
 /* terminal */
 .term{border:1px solid var(--rule);background:var(--panel);font-family:var(--mono);font-size:12.5px}
@@ -187,7 +216,7 @@ section{padding-block:76px 0}
 @media (max-width:760px){.edu{grid-template-columns:1fr}.edu > div + div{border-left:0;border-top:1px solid var(--rule);padding-left:0}.edu > div{padding-right:0}}
 
 /* footer */
-footer{margin:76px -20px 0;padding:70px 20px 34px;border-top:2px solid var(--orange);background:var(--panel)}
+footer{position:relative;z-index:1;margin:76px -20px 0;padding:70px 20px 34px;border-top:2px solid var(--orange);background:var(--panel)}
 footer .inner{max-width:1120px;margin:0 auto}
 footer h2{font-size:clamp(34px,6vw,72px);font-weight:800;text-transform:uppercase;letter-spacing:-.035em;line-height:.95;margin:16px 0 18px;font-stretch:110%}
 footer h2 em{font-style:normal;color:var(--orange)}
@@ -255,17 +284,20 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
 <div class="wrap" id="top">
   <div class="hero">
     <div class="left">
-      <span class="avail"><i></i>Available — SWE internships &amp; new-grad</span>
-      <h1>Jorge<br>Samaniego</h1>
+      <span class="avail"><i></i>Available — Internships &amp; new-grad</span>
+      <div class="name">
+        <span class="pfp"><img src="assets/jorge.jpg" width="480" height="480" alt="Jorge Samaniego"></span>
+        <h1>Jorge<br>Samaniego</h1>
+      </div>
       <div class="subhead"><b>Software Engineer</b> // Java · Full-stack · Infrastructure // Long Island, NY</div>
-      <p>I ship production Java to the <strong>Linux Foundation's Open Mainframe Project</strong>, build full-stack AI applications, and rebuild enterprise identity and endpoint infrastructure at <strong>Leviton</strong> after a major security incident.</p>
+      <p>I ship production Java to the <strong>Linux Foundation's Open Mainframe Project</strong>, build full-stack AI applications, and engineer Microsoft Azure infrastructure solutions at <strong>Leviton</strong>.</p>
       <div class="acts">
         <a class="solid" href="mailto:jorgemsamaniego@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="14"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
-        <a href="https://github.com/jsamaniego4" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>GitHub</a>
-        <a href="https://www.linkedin.com/in/jorge-samaniego048/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn</a>
+        <a class="prof gh" href="https://github.com/jsamaniego4" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg><span class="t"><b>GitHub</b><small>@jsamaniego4</small></span><span class="arr" aria-hidden="true">↗</span></a>
+        <a class="prof li" href="https://www.linkedin.com/in/jorge-samaniego048/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linkedin"/></svg><span class="t"><b>LinkedIn</b><small>Let's connect</small></span><span class="arr" aria-hidden="true">↗</span></a>
       </div>
     </div>
     <div class="right">
@@ -281,7 +313,7 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
       </div>
       <dl class="specs">
         <div><dt>Degree</dt><dd>B.S. Computer Science — May 2027</dd></div>
-        <div><dt>School</dt><dd>Farmingdale State College</dd></div>
+        <div><dt>School</dt><dd class="school"><img class="seal" src="assets/farmingdale-seal.png" width="112" height="112" alt="" aria-hidden="true">Farmingdale State College</dd></div>
         <div><dt>Primary</dt><dd>Java · TypeScript · Python</dd></div>
         <div><dt>Focus</dt><dd>Backend · Systems · Cloud Infra</dd></div>
       </dl>
@@ -429,10 +461,11 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
         <h3>Infrastructure Engineer — Intern</h3>
         <div class="org">Leviton // Melville, NY // Year-round</div>
         <ul>
-          <li>Support enterprise recovery after a major security incident, rebuilding identity, endpoint and server infrastructure.</li>
-          <li>Built Microsoft Entra ID from the ground up — user accounts, security groups, Conditional Access and MFA enforcing least-privilege access.</li>
-          <li>Redeployed endpoint management through Intune, re-enrolling devices under hardened compliance, encryption and configuration baselines.</li>
-          <li>Rebuilt and reconfigured servers, validating service integrity before returning systems to production.</li>
+          <li>Design and deploy infrastructure solutions across Leviton's Microsoft Azure environment, spanning identity, endpoint and server workloads.</li>
+          <li>Engineer Microsoft Entra ID identity and access — user provisioning, security groups, Conditional Access and MFA policies enforcing least-privilege access.</li>
+          <li>Manage the endpoint fleet through Microsoft Intune, enforcing compliance, encryption and configuration baselines across enterprise devices.</li>
+          <li>Configure and maintain Windows Server infrastructure, validating service health before changes reach production.</li>
+          <li>Troubleshoot identity, access and compliance issues across Microsoft Purview, IAM and core Azure cloud configurations.</li>
           <li>Automated help-desk workflows with Power Automate and APIs; enforced security baselines through Group Policy.</li>
         </ul>
       </div>
@@ -509,10 +542,11 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
           <div class="lg" style="--brand:#1BA0D7"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cisco"/></svg><span>Cisco</span></div><div class="lg" style="--brand:#1679A7"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wireshark"/></svg><span>Wireshark</span></div><div class="lg" style="--brand:#FF6633"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-burpsuite"/></svg><span>Burp Suite</span></div><div class="lg" style="--brand:#FCC624"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linux"/></svg><span>Linux</span></div>
           <div class="lg"><span class="mono-tile">ID</span><span>Entra ID</span></div>
           <div class="lg"><span class="mono-tile">IN</span><span>Intune</span></div>
+          <div class="lg"><span class="mono-tile">PV</span><span>Purview</span></div>
           <div class="lg"><span class="mono-tile">AD</span><span>Active Directory</span></div>
           <div class="lg"><span class="mono-tile">WS</span><span>Windows Server</span></div>
         </div>
-        <p class="stack-note">Also: Conditional Access · MFA · Group Policy · Defender · Lansweeper · M365 Admin · TCP/IP · DNS · DHCP · Windows 11 deployment · TryHackMe</p>
+        <p class="stack-note">Also: Conditional Access · MFA · IAM · Group Policy · Defender · Lansweeper · M365 Admin · TCP/IP · DNS · DHCP · Windows 11 deployment · TryHackMe</p>
       </div>
     </div>
     </div>
@@ -523,7 +557,7 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
     <div class="edu">
       <div>
         <span class="tag">Aug 2023 — May 2027</span>
-        <h3>Farmingdale State College</h3>
+        <h3 class="school"><img class="seal" src="assets/farmingdale-seal.png" width="112" height="112" alt="" aria-hidden="true">Farmingdale State College</h3>
         <p>B.S. Computer Science, Minor in Finance</p>
         <p style="color:var(--faint);font-size:14px">Data Structures &amp; Algorithms · Operating Systems · Databases · AI &amp; Machine Learning · Information Retrieval</p>
       </div>
@@ -546,8 +580,8 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
     <p>Open to software engineering internships and new-grad roles. Email gets the fastest response.</p>
     <div class="acts">
       <a class="solid" href="mailto:jorgemsamaniego@gmail.com">jorgemsamaniego@gmail.com</a>
-      <a href="https://github.com/jsamaniego4" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/jorge-samaniego048/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="prof gh" href="https://github.com/jsamaniego4" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg><span class="t"><b>GitHub</b><small>@jsamaniego4</small></span><span class="arr" aria-hidden="true">↗</span></a>
+      <a class="prof li" href="https://www.linkedin.com/in/jorge-samaniego048/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linkedin"/></svg><span class="t"><b>LinkedIn</b><small>Let's connect</small></span><span class="arr" aria-hidden="true">↗</span></a>
     </div>
     <div class="fine"><span>© 2026 Jorge Samaniego</span><span>Long Island, New York</span></div>
   </div>
