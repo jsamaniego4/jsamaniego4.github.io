@@ -99,7 +99,7 @@ h1 em{font-style:normal;color:var(--orange)}
 .acts a.prof:hover .arr{transform:translate(2px,-2px)}
 .school{display:inline-flex;align-items:center;gap:9px}
 .school .seal{width:20px;height:20px;border-radius:50%;background:#fff;padding:1px;flex:none}
-h3.school{gap:12px}
+h3.school{display:flex;gap:12px}
 h3.school .seal{width:34px;height:34px}
 
 /* terminal */
@@ -138,6 +138,9 @@ section{padding-block:76px 0}
 /* project blocks */
 .proj{display:grid;grid-template-columns:200px 1fr 300px;gap:32px;padding:34px 0;border-bottom:1px solid var(--rule)}
 .proj .meta{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);display:grid;gap:10px;align-content:start}
+.proj .meta .hit.award{display:grid;gap:3px;padding:8px 11px}
+.proj .meta .hit.award b{font-weight:700}
+.proj .meta .hit.award small{font-size:10px;color:var(--dim);letter-spacing:.08em}
 .proj .meta .hit{display:inline-flex;align-items:center;gap:7px;color:var(--orange);border:1px solid rgba(255,93,26,.4);padding:5px 9px;justify-self:start;letter-spacing:.1em}
 .proj h3{margin:0 0 10px;font-size:30px;font-weight:800;letter-spacing:-.025em;text-transform:uppercase;font-stretch:106%}
 .proj .lede{color:var(--dim);margin:0 0 18px;font-size:16px;max-width:60ch}
@@ -227,8 +230,11 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
 .proj .meta span{display:inline-flex;align-items:center;gap:7px}
 .proj .meta svg{width:14px;height:14px;fill:currentColor;flex:none;opacity:.9}
 .edu .org-logo svg{width:15px;height:15px}
+.edu dt.org-logo{color:var(--ink)}
 
-.stack{gap:0}
+.stack{gap:6px;border:0}
+.stack span{border:1px solid var(--rule)}
+.stack span:first-child{border-left:1px solid var(--rule)}
 .stack span{display:inline-flex;align-items:center;gap:7px}
 .stack span svg{width:13px;height:13px;fill:currentColor;opacity:.85;flex:none}
 .logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(122px,1fr));border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
@@ -274,8 +280,8 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
 <header class="bar">
   <a class="id" href="#top"><b>JS</b>JORGE SAMANIEGO <span style="color:var(--faint)">// SWE</span></a>
   <nav>
-    <a href="#work">Work</a>
     <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
     <a href="#stack">Stack</a>
     <a class="cta" href="mailto:jorgemsamaniego@gmail.com">Hire me</a>
   </nav>
@@ -290,7 +296,7 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
         <h1>Jorge<br>Samaniego</h1>
       </div>
       <div class="subhead"><b>Software Engineer</b> // Java · Full-stack · Infrastructure // Long Island, NY</div>
-      <p>I ship production Java to the <strong>Linux Foundation's Open Mainframe Project</strong>, build full-stack AI applications, and engineer Microsoft Azure infrastructure solutions at <strong>Leviton</strong>.</p>
+      <p>I ship production Java to the <strong>Linux Foundation's Open Mainframe Project</strong> and build AI-powered applications and RAG systems with React, FastAPI and Azure OpenAI at <strong>Leviton</strong>.</p>
       <div class="acts">
         <a class="solid" href="mailto:jorgemsamaniego@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="14"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
@@ -327,12 +333,66 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
     <div><b>80+</b><p>Endpoints deployed in prod</p></div>
   </div>
 
+  <section id="experience">
+    <div class="shead"><h2>Experience</h2><span class="tag">2025 — Present</span></div>
+
+    <div class="job">
+      <div class="when">Jun 2026 — Present<span class="cur"><i></i>Current</span>
+        <div class="brand">
+          <img src="assets/leviton-logo.png" width="350" height="128" alt="Leviton" loading="lazy">
+        </div>
+      </div>
+      <div>
+        <h3>AI / Software Engineer — Intern</h3>
+        <div class="org">Leviton // Melville, NY // Year-round</div>
+        <ul>
+          <li>Developed internal AI-powered applications using React, TypeScript, Python and FastAPI, reducing manual support workflows by approximately 35% and improving employee response times across enterprise IT operations.</li>
+          <li>Built retrieval-augmented generation applications with Azure OpenAI and internal knowledge sources, cutting technical documentation lookup time by approximately 50% and accelerating issue resolution for support teams.</li>
+          <li>Designed REST APIs and backend services with FastAPI to connect React applications with enterprise systems, automation workflows and AI services, reducing repetitive data entry and operational handoffs by approximately 30%.</li>
+          <li>Engineered automation and system integrations using Python, PowerShell, Power Automate and APIs to streamline provisioning, auditing, ticket workflows and application management, saving an estimated 15+ hours of manual work per week.</li>
+          <li>Automated help-desk workflows with Power Automate and APIs; enforced security baselines through Group Policy and ran routine endpoint, printer and account audits.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Jun 2026 — Aug 2026
+        <div class="brand">
+          <img src="assets/zowe-logo.png" width="440" height="160" alt="Zowe, an Open Mainframe Project" loading="lazy">
+          <div class="lf"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linuxfoundation"/></svg><span><b>Linux Foundation</b></span></div>
+        </div>
+      </div>
+      <div>
+        <h3>Software Engineer — Mentee</h3>
+        <div class="org">Linux Foundation // Zowe Client Java SDK // Remote</div>
+        <ul>
+          <li>Selected for a mentorship under project maintainer Frank Giordano, contributing production Java to the official Zowe Client Java SDK.</li>
+          <li>Implemented the z/OSMF List Workflows and Cancel Workflow APIs, backed by 28 new unit tests.</li>
+          <li>Extended dataset delete support to uncataloged datasets bound to a specific volume serial.</li>
+          <li>Weighed API design tradeoffs with the maintainer, shipped a breaking change with a documented migration path, and refactored type dispatch to an exhaustive switch with explicit failure handling.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">May 2025 — Aug 2025</div>
+      <div>
+        <h3>IT Intern</h3>
+        <div class="org">Tech 2020 Solutions // Melville, NY</div>
+        <ul>
+          <li>Configured server deployments and LAN infrastructure setups for client environments.</li>
+          <li>Deployed 80+ Windows 11 machines customized to client requirements, provisioning user accounts and industry-specific software.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="work">
     <div class="shead"><h2>Selected Work</h2><span class="tag">04 Projects</span></div>
 
     <article class="proj">
       <div class="meta">
-        <span class="hit">&#9733; 1st Place — RamHacks 2026</span>
+        <span class="hit award"><b>&#9733; 1st Place</b><small>RamHacks 2026 · AI Track</small></span>
         <span>Full-stack · AI</span>
         <span>2026</span>
       </div>
@@ -345,14 +405,8 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
           <li>Took first place in the AI track against a field of student teams.</li>
         </ul>
         <div class="stack"><span style="--brand:#000000"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-nextdotjs"/></svg>Next.js</span><span style="--brand:#61DAFB"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-react"/></svg>React 19</span><span style="--brand:#3178C6"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-typescript"/></svg>TypeScript</span><span style="--brand:#4169E1"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-postgresql"/></svg>Postgres</span><span style="--brand:#3FCF8E"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-supabase"/></svg>Supabase</span><span style="--brand:#D97757"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-claude"/></svg>Claude API</span></div>
-        <br><a class="link" href="https://github.com/jsamaniego4/Mirror72" target="_blank" rel="noopener">Source →</a>
-      </div>
-      <div class="side">
-        <figure class="shot">
-          <div class="top"><span class="dots"><i></i><i></i><i></i></span><span>mirror72 / sign-in</span></div>
-          <img src="assets/mirror72-signin.jpg" width="720" height="1000" alt="Mirror72 sign-in screen: logo, tagline 'Predict your next 72 hours', Google sign-in and email login" loading="lazy">
-        </figure>
-        <div class="readout">
+        <a class="link" href="https://github.com/jsamaniego4/Mirror72" target="_blank" rel="noopener">Source →</a>
+        <div class="readout" style="margin-top:28px;max-width:520px">
           <div class="top"><span>Forecast · 72h</span><span style="color:var(--orange)">Sample</span></div>
           <div class="body">
             <svg viewBox="0 0 300 150" role="img" aria-label="Sample energy and focus curves over 72 hours">
@@ -366,6 +420,12 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
             <div class="lg"><span><i style="background:#FF5D1A"></i>Energy</span><span><i style="background:#7FA0C0"></i>Focus</span></div>
           </div>
         </div>
+      </div>
+      <div class="side">
+        <figure class="shot">
+          <div class="top"><span class="dots"><i></i><i></i><i></i></span><span>mirror72 / sign-in</span></div>
+          <img src="assets/mirror72-signin.jpg" width="720" height="1000" alt="Mirror72 sign-in screen: logo, tagline 'Predict your next 72 hours', Google sign-in and email login" loading="lazy">
+        </figure>
       </div>
     </article>
 
@@ -419,7 +479,7 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
           <li>ML classifier identifies product category at 85%+ accuracy.</li>
         </ul>
         <div class="stack"><span style="--brand:#3776AB"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-python"/></svg>Python</span><span style="--brand:#150458"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pandas"/></svg>Pandas</span><span>SQL</span><span style="--brand:#F7931E"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scikitlearn"/></svg>scikit-learn</span></div>
-        <br><a class="link" href="https://github.com/jsamaniego4/SniperTok" target="_blank" rel="noopener">Source →</a>
+        <a class="link" href="https://github.com/jsamaniego4/SniperTok" target="_blank" rel="noopener">Source →</a>
       </div>
       <div class="side">
         <dl class="specs">
@@ -436,69 +496,14 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
         <h4>OS-Fork-Pipe-Min</h4>
         <p>Process creation with fork() and inter-process communication over UNIX pipes.</p>
         <div class="stack"><span style="--brand:#00599C"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cplusplus"/></svg>C++</span><span>POSIX</span></div>
-        <br><a class="link" href="https://github.com/jsamaniego4/OS-Fork-Pipe-Min" target="_blank" rel="noopener">Source →</a>
+        <a class="link" href="https://github.com/jsamaniego4/OS-Fork-Pipe-Min" target="_blank" rel="noopener">Source →</a>
       </div>
       <div>
         <span class="tag">OOP · Java</span>
         <h4>ATM-Machine</h4>
         <p>Object-oriented ATM simulation: account handling, PIN verification, deposits and withdrawals.</p>
         <div class="stack"><span style="--brand:#000000"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-openjdk"/></svg>Java</span><span>OOP</span></div>
-        <br><a class="link" href="https://github.com/jsamaniego4/ATM-Machine" target="_blank" rel="noopener">Source →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="shead"><h2>Experience</h2><span class="tag">2025 — Present</span></div>
-
-    <div class="job">
-      <div class="when">Jun 2026 — Present<span class="cur"><i></i>Current</span>
-        <div class="brand">
-          <img src="assets/leviton-logo.png" width="350" height="128" alt="Leviton" loading="lazy">
-        </div>
-      </div>
-      <div>
-        <h3>Infrastructure Engineer — Intern</h3>
-        <div class="org">Leviton // Melville, NY // Year-round</div>
-        <ul>
-          <li>Design and deploy infrastructure solutions across Leviton's Microsoft Azure environment, spanning identity, endpoint and server workloads.</li>
-          <li>Engineer Microsoft Entra ID identity and access — user provisioning, security groups, Conditional Access and MFA policies enforcing least-privilege access.</li>
-          <li>Manage the endpoint fleet through Microsoft Intune, enforcing compliance, encryption and configuration baselines across enterprise devices.</li>
-          <li>Configure and maintain Windows Server infrastructure, validating service health before changes reach production.</li>
-          <li>Troubleshoot identity, access and compliance issues across Microsoft Purview, IAM and core Azure cloud configurations.</li>
-          <li>Automated help-desk workflows with Power Automate and APIs; enforced security baselines through Group Policy.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">Jun 2026 — Aug 2026
-        <div class="brand">
-          <img src="assets/zowe-logo.png" width="440" height="160" alt="Zowe, an Open Mainframe Project" loading="lazy">
-          <div class="lf"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linuxfoundation"/></svg><span><b>Linux Foundation</b></span></div>
-        </div>
-      </div>
-      <div>
-        <h3>Software Engineer — Mentee</h3>
-        <div class="org">Linux Foundation // Zowe Client Java SDK // Remote</div>
-        <ul>
-          <li>Selected for a mentorship under project maintainer Frank Giordano, contributing production Java to the official Zowe Client Java SDK.</li>
-          <li>Implemented the z/OSMF List Workflows and Cancel Workflow APIs, backed by 28 new unit tests.</li>
-          <li>Extended dataset delete support to uncataloged datasets bound to a specific volume serial.</li>
-          <li>Weighed API design tradeoffs with the maintainer, shipped a breaking change with a documented migration path, and refactored type dispatch to an exhaustive switch with explicit failure handling.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">May 2025 — Aug 2025</div>
-      <div>
-        <h3>IT Intern</h3>
-        <div class="org">Tech 2020 Solutions // Melville, NY</div>
-        <ul>
-          <li>Configured server deployments and LAN infrastructure setups for client environments.</li>
-          <li>Deployed 80+ Windows 11 machines customized to client requirements, provisioning user accounts and industry-specific software.</li>
-        </ul>
+        <a class="link" href="https://github.com/jsamaniego4/ATM-Machine" target="_blank" rel="noopener">Source →</a>
       </div>
     </div>
   </section>
@@ -549,14 +554,13 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
         <p class="stack-note">Also: Conditional Access · MFA · IAM · Group Policy · Defender · Lansweeper · M365 Admin · TCP/IP · DNS · DHCP · Windows 11 deployment · TryHackMe</p>
       </div>
     </div>
-    </div>
   </section>
 
   <section id="education">
     <div class="shead"><h2>Education &amp; Leadership</h2><span class="tag">Since 2023</span></div>
     <div class="edu">
       <div>
-        <span class="tag">Aug 2023 — May 2027</span>
+        <span class="tag" style="display:block">Aug 2023 — May 2027</span>
         <h3 class="school"><img class="seal" src="assets/farmingdale-seal.png" width="112" height="112" alt="" aria-hidden="true">Farmingdale State College</h3>
         <p>B.S. Computer Science, Minor in Finance</p>
         <p style="color:var(--faint);font-size:14px">Data Structures &amp; Algorithms · Operating Systems · Databases · AI &amp; Machine Learning · Information Retrieval</p>
