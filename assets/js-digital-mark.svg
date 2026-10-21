@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <title>JS Digital Co.</title>
+  <path d="M2 2h76v76H2z" stroke="#5B636D" stroke-width="2"/>
+  <path d="M33 22v29c0 8-4 12-11 12H12v-8h9c3 0 4-1 4-5V22h8Zm33 0H49c-9 0-13 5-13 12 0 6 3 10 10 13l9 4c2 1 3 2 3 3 0 2-2 3-5 3H37v8h17c9 0 13-4 13-11 0-6-3-10-10-13l-9-4c-3-1-4-2-4-4 0-2 2-3 5-3h17v-8Z" fill="#E8EAEC"/>
+  <path d="M62 75h16v3H62z" fill="#FF5D1A"/>
+</svg>
