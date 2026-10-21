@@ -61,6 +61,7 @@ a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 .case-identity a:hover{color:var(--orange)}
 .case-work h4{font-size:16px;font-weight:600;line-height:1.5;margin:0 0 9px}
 .case-work p{font-size:14px;line-height:1.8;color:var(--dim);margin:0}
+.case-work p+p{margin-top:12px}
 .case-scope{margin:0;font-size:12px;border-left:1px solid var(--rule);padding-left:22px}
 .case-scope div+div{margin-top:14px}
 .case-scope dt{color:var(--faint);font:10px var(--mono);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
@@ -89,6 +90,7 @@ header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:f
 h1{font-size:clamp(42px,7vw,86px);line-height:.94;letter-spacing:-.035em;font-weight:800;font-stretch:112%;text-transform:uppercase;margin:26px 0 0}
 .name{display:flex;align-items:center;gap:clamp(16px,2.4vw,28px);margin-top:26px}
 .name h1{margin:0;font-size:clamp(38px,4.3vw,62px)}
+.name .degree{margin:10px 0 0;color:var(--dim);font-size:14px;line-height:1.6;max-width:30ch}
 .hero .left{min-width:0}
 @media (max-width:920px){.name h1{font-size:clamp(38px,6.4vw,74px)}}
 @media (max-width:520px){.name{flex-direction:column;align-items:flex-start;gap:18px}.name h1{font-size:clamp(34px,11vw,42px)}}
@@ -321,10 +323,13 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
       <span class="avail"><i></i>Available — Internships &amp; new-grad</span>
       <div class="name">
         <span class="pfp"><img src="assets/jorge.jpg" width="480" height="480" alt="Jorge Samaniego"></span>
-        <h1>Jorge<br>Samaniego</h1>
+        <div>
+          <h1>Jorge<br>Samaniego</h1>
+          <p class="degree">B.S. in Computer Science @ Farmingdale State College · 2027</p>
+        </div>
       </div>
       <div class="subhead"><b>Software Engineer</b> // Java · Full-stack · Infrastructure // Long Island, NY</div>
-      <p>I ship production Java to the <strong>Linux Foundation's Open Mainframe Project</strong> and build AI-powered applications and RAG systems with React, FastAPI and Azure OpenAI at <strong>Leviton</strong>.</p>
+      <p>I ship production Java to the <strong>Linux Foundation's Open Mainframe Project</strong> and build AI-powered applications and RAG systems at <strong>Leviton</strong>. Through <strong>JS Digital Co.</strong>, I work independently with local businesses to deliver websites and lead reporting tools. I bring an entrepreneurial mindset to engineering: finding practical problems, taking ownership, and carrying ideas through to deployment.</p>
       <div class="acts">
         <a class="solid" href="mailto:jorgemsamaniego@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="14"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
@@ -380,12 +385,14 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
           <a href="https://rickscleanwhips.com" target="_blank" rel="noopener">rickscleanwhips.com &nearr;</a>
         </div>
         <div class="case-work">
-          <h4>Business website, from build to deployment.</h4>
-          <p>Built and deployed the website with Google reviews integrated into the experience. Optimized the client's Google Business Profile alongside the site.</p>
+          <h4>Website development, launch, and Google presence.</h4>
+          <p>Built and deployed rickscleanwhips.com for the auto detailing business, taking responsibility for both the website implementation and its public launch. Integrated Google reviews into the site so visitors can read customer feedback while evaluating the business.</p>
+          <p>Optimized the client's Google Business Profile alongside the website. The engagement covered the business's own site and its presence on Google, bringing website delivery and local search work together in one project.</p>
         </div>
         <dl class="case-scope">
           <div><dt>Delivered</dt><dd>Live website &amp; review integration</dd></div>
           <div><dt>Additional work</dt><dd>Google Business Profile optimization</dd></div>
+          <div><dt>My role</dt><dd>Independent developer, deployment &amp; Google presence</dd></div>
         </dl>
       </article>
       <article class="studio-case">
@@ -394,12 +401,15 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
           <h3>JR Construction Paving</h3>
         </div>
         <div class="case-work">
-          <h4>Lead gathering with scheduled weekly reports.</h4>
-          <p>Built a lead assistant to gather different types of leads and send weekly reports. Organized opportunities for the business to review and follow up on.</p>
+          <h4>Lead gathering and recurring reporting for client outreach.</h4>
+          <p>Built a lead assistant for JR Construction Paving that gathers opportunities through Nextdoor and SAM.gov API integrations. Used AI bots to search and filter collected leads for relevance to paving and construction, helping the business focus its outreach on work that fits its services.</p>
+          <p>Organized relevant opportunities into reports and set up weekly delivery for review and follow-up. My work covered API integration, AI-assisted lead discovery and filtering, report preparation, and scheduled delivery.</p>
         </div>
         <dl class="case-scope">
           <div><dt>Delivered</dt><dd>Lead assistant &amp; reporting workflow</dd></div>
           <div><dt>Report schedule</dt><dd>Weekly delivery</dd></div>
+          <div><dt>Lead sources</dt><dd>Nextdoor &amp; SAM.gov APIs</dd></div>
+          <div><dt>My role</dt><dd>API integrations, AI lead filtering &amp; reporting</dd></div>
         </dl>
       </article>
     </div>
@@ -430,17 +440,17 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
       <div class="when">Jun 2026 — Aug 2026
         <div class="brand">
           <img src="assets/zowe-logo.png" width="440" height="160" alt="Zowe, an Open Mainframe Project" loading="lazy">
-          <div class="lf"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linuxfoundation"/></svg><span><b>Linux Foundation</b></span></div>
         </div>
       </div>
       <div>
         <h3>Software Engineer — Mentee</h3>
-        <div class="org">Linux Foundation // Zowe Client Java SDK // Remote</div>
+        <div class="org"><em>Open IBM Mainframe Project</em> // Zowe Client Java SDK // Remote</div>
         <ul>
-          <li>Selected for a mentorship under project maintainer Frank Giordano, contributing production Java to the official Zowe Client Java SDK.</li>
-          <li>Implemented the z/OSMF List Workflows and Cancel Workflow APIs, backed by 28 new unit tests.</li>
-          <li>Extended dataset delete support to uncataloged datasets bound to a specific volume serial.</li>
-          <li>Weighed API design tradeoffs with the maintainer, shipped a breaking change with a documented migration path, and refactored type dispatch to an exhaustive switch with explicit failure handling.</li>
+          <li>Selected for a mentorship under project maintainer <em>Frank Giordano</em>, contributing production Java code to the official Zowe Client Java SDK</li>
+          <li>Implemented the z/OSMF List Workflows API (<strong>#521</strong>), building WorkflowList with filtered retrieval by name, owner, and system plus a common method supporting all six query filters; backed by 16 unit tests</li>
+          <li>Implemented the z/OSMF Cancel Workflow API (<strong>#532</strong>), issuing a PUT to the /operations/cancel endpoint with support for both basic and token-based z/OSMF authentication; backed by 12 unit tests</li>
+          <li>Extended dataset delete support to uncataloged datasets bound to a specific volume serial (<strong>#582</strong>), refactoring DsnDelete behind an immutable input-data carrier with static factories that make invalid parameter combinations unconstructible at compile time</li>
+          <li>Weighed API design tradeoffs with the maintainer to keep the delete interface symmetric with the existing rename refactor, shipped the resulting breaking change with a documented migration path, and refactored type dispatch to an exhaustive switch with explicit failure handling during review (1,188 tests passing on JDK 21)</li>
         </ul>
       </div>
     </div>
@@ -459,7 +469,7 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
   </section>
 
   <section id="work">
-    <div class="shead"><h2>Selected Work</h2><span class="tag">04 Projects</span></div>
+    <div class="shead"><h2>Selected Work</h2><span class="tag">05 Projects</span></div>
 
     <article class="proj">
       <div class="meta">
@@ -563,18 +573,20 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
 
     <div class="duo">
       <div>
-        <span class="tag">Systems · C++</span>
-        <h4>OS-Fork-Pipe-Min</h4>
-        <p>Process creation with fork() and inter-process communication over UNIX pipes.</p>
-        <div class="stack"><span style="--brand:#00599C"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cplusplus"/></svg>C++</span><span>POSIX</span></div>
-        <a class="link" href="https://github.com/jsamaniego4/OS-Fork-Pipe-Min" target="_blank" rel="noopener">Source →</a>
+        <span class="tag">Application delivery · Azure</span>
+        <h4>Azure Container Apps Deployment</h4>
+        <p>Containerized FastAPI service with Bicep infrastructure and a GitHub Actions delivery pipeline. Includes a non-root Docker image, OIDC authentication, managed identity access to a private registry, and health and release verification.</p>
+        <p>Local tests, infrastructure compilation, and dependency audit passed. Live Azure deployment and workflow execution are pending configuration.</p>
+        <div class="stack"><span>FastAPI</span><span>Docker</span><span>Bicep</span><span>GitHub Actions</span></div>
+        <a class="link" href="https://github.com/jsamaniego4/cloud-deployment-demo" target="_blank" rel="noopener">Source &amp; architecture →</a>
       </div>
       <div>
-        <span class="tag">OOP · Java</span>
-        <h4>ATM-Machine</h4>
-        <p>Object-oriented ATM simulation: account handling, PIN verification, deposits and withdrawals.</p>
-        <div class="stack"><span style="--brand:#000000"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-openjdk"/></svg>Java</span><span>OOP</span></div>
-        <a class="link" href="https://github.com/jsamaniego4/ATM-Machine" target="_blank" rel="noopener">Source →</a>
+        <span class="tag">Infrastructure as code · Azure</span>
+        <h4>Azure Enterprise Infrastructure</h4>
+        <p>Reproducible Terraform lab provisioning an Ubuntu VM, dedicated network, restricted SSH access, scoped managed-identity RBAC, and CPU alerting. Includes Bash preflight scripts, GitHub Actions checks, and deployment and recovery runbooks.</p>
+        <p>Local Terraform validation and four mock security tests passed. Live deployment, alert delivery, and recovery validation are pending.</p>
+        <div class="stack"><span>Terraform</span><span>Linux</span><span>Bash</span><span>Azure RBAC</span></div>
+        <a class="link" href="https://github.com/jsamaniego4/azure-infrastructure-enterprise" target="_blank" rel="noopener">Source &amp; architecture →</a>
       </div>
     </div>
   </section>
