@@ -269,10 +269,18 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
 .logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(122px,1fr));border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
 .logos a,.logos div.lg{display:flex;align-items:center;gap:10px;padding:14px 14px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
   font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--dim);transition:background .15s,color .15s}
-.logos a:hover{background:var(--panel-2);color:var(--ink)}
-.logos svg{width:20px;height:20px;flex:none;fill:currentColor;color:var(--faint);transition:color .15s}
+.logos a:hover,.logos div.lg:hover{background:var(--panel-2);color:var(--ink)}
+.logos svg{width:20px;height:20px;flex:none;fill:currentColor;color:var(--brand,var(--accent,#7FA0C0));transition:color .15s}
 .logos a:hover svg,.logos .lg:hover svg{color:var(--brand,var(--orange))}
-.logos .mono-tile{width:20px;height:20px;flex:none;display:grid;place-items:center;border:1px solid var(--rule-hi);font-family:var(--mono);font-size:9px;color:var(--faint)}
+.logos .mono-tile{width:24px;height:24px;flex:none;display:grid;place-items:center;border:1px solid currentColor;font-family:var(--mono);font-size:9px;color:var(--brand,var(--accent,#7FA0C0));background:color-mix(in srgb,currentColor 8%,transparent)}
+.stack-groups>div{--accent:#72B7FF}
+.stack-groups>div:nth-child(2){--accent:#51D6BE}
+.stack-groups>div:nth-child(3){--accent:#C4A1FF}
+.stack-groups>div:nth-child(4){--accent:#FFC16B}
+.stack-groups>div:nth-child(5){--accent:#63B3FF}
+.stack-groups>div:nth-child(6){--accent:#79D5B0}
+.stack-groups .logos .lg{background:color-mix(in srgb,var(--accent) 4%,var(--bg));color:#BDC5CF}
+.stack-groups h3{border-left:3px solid var(--accent);padding-left:12px;color:var(--accent)}
 .org-logo{display:inline-flex;align-items:center;gap:9px;color:var(--dim)}
 .org-logo svg{width:17px;height:17px;fill:currentColor;flex:none}
 .stack-groups{display:grid;gap:34px}
@@ -597,7 +605,7 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
       <div>
         <h3>Languages</h3>
         <div class="logos">
-          <div class="lg" style="--brand:#000000"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-openjdk"/></svg><span>Java</span></div><div class="lg" style="--brand:#3776AB"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-python"/></svg><span>Python</span></div><div class="lg" style="--brand:#3178C6"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-typescript"/></svg><span>TypeScript</span></div><div class="lg" style="--brand:#F7DF1E"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-javascript"/></svg><span>JavaScript</span></div><div class="lg" style="--brand:#00599C"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cplusplus"/></svg><span>C / C++</span></div>
+          <div class="lg" style="--brand:#E8EAEC"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-openjdk"/></svg><span>Java</span></div><div class="lg" style="--brand:#65A9E8"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-python"/></svg><span>Python</span></div><div class="lg" style="--brand:#65A9E8"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-typescript"/></svg><span>TypeScript</span></div><div class="lg" style="--brand:#F7DF1E"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-javascript"/></svg><span>JavaScript</span></div><div class="lg" style="--brand:#65A9E8"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cplusplus"/></svg><span>C / C++</span></div>
           <div class="lg"><span class="mono-tile">SQL</span><span>SQL</span></div>
           <div class="lg"><span class="mono-tile">PS</span><span>PowerShell</span></div>
         </div>
@@ -605,23 +613,42 @@ footer p{color:var(--dim);max-width:52ch;margin:0 0 28px;font-size:16px}
       <div>
         <h3>Frameworks &amp; Libraries</h3>
         <div class="logos">
-          <div class="lg" style="--brand:#61DAFB"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-react"/></svg><span>React</span></div><div class="lg" style="--brand:#000000"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-nextdotjs"/></svg><span>Next.js</span></div><div class="lg" style="--brand:#0F0F11"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-angular"/></svg><span>Angular</span></div><div class="lg" style="--brand:#06B6D4"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tailwindcss"/></svg><span>Tailwind</span></div><div class="lg" style="--brand:#150458"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pandas"/></svg><span>Pandas</span></div><div class="lg" style="--brand:#F7931E"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scikitlearn"/></svg><span>scikit-learn</span></div>
+          <div class="lg" style="--brand:#61DAFB"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-react"/></svg><span>React</span></div><div class="lg" style="--brand:#E8EAEC"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-nextdotjs"/></svg><span>Next.js</span></div><div class="lg" style="--brand:#F46B92"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-angular"/></svg><span>Angular</span></div><div class="lg" style="--brand:#06B6D4"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tailwindcss"/></svg><span>Tailwind</span></div><div class="lg" style="--brand:#B6A3F5"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pandas"/></svg><span>Pandas</span></div><div class="lg" style="--brand:#F7931E"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scikitlearn"/></svg><span>scikit-learn</span></div>
           <div class="lg"><span class="mono-tile">JU</span><span>JUnit</span></div>
         </div>
       </div>
       <div>
         <h3>AI / LLM</h3>
         <div class="logos">
-          <div class="lg" style="--brand:#D97757"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-claude"/></svg><span>Claude API</span></div><div class="lg" style="--brand:#412991"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-openai"/></svg><span>OpenAI API</span></div><div class="lg" style="--brand:#1C3C3C"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-langchain"/></svg><span>LangChain</span></div>
+          <div class="lg" style="--brand:#D97757"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-claude"/></svg><span>Claude API</span></div><div class="lg" style="--brand:#B6A3F5"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-openai"/></svg><span>OpenAI API</span></div><div class="lg" style="--brand:#80CDB5"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-langchain"/></svg><span>LangChain</span></div>
           <div class="lg"><span class="mono-tile">SK</span><span>Semantic Kernel</span></div>
         </div>
       </div>
       <div>
-        <h3>Cloud, Data &amp; Build</h3>
+        <h3>Data &amp; Build Tools</h3>
+        <div class="logos">
+          <div class="lg" style="--brand:#FFB454"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-amazonwebservices"/></svg><span>AWS</span></div><div class="lg" style="--brand:#4169E1"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-postgresql"/></svg><span>PostgreSQL</span></div><div class="lg" style="--brand:#47A248"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mongodb"/></svg><span>MongoDB</span></div><div class="lg" style="--brand:#3FCF8E"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-supabase"/></svg><span>Supabase</span></div><div class="lg" style="--brand:#E8EAEC"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-vercel"/></svg><span>Vercel</span></div><div class="lg" style="--brand:#F05032"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-git"/></svg><span>Git</span></div><div class="lg" style="--brand:#82D8C8"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-gradle"/></svg><span>Gradle</span></div><div class="lg" style="--brand:#C71A36"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apachemaven"/></svg><span>Maven</span></div>
+          <div class="lg"><span class="mono-tile">Z</span><span>Zowe SDK</span></div>
+        </div>
+      </div>
+      <div>
+        <h3>Azure &amp; Cloud Engineering</h3>
         <div class="logos">
           <div class="lg"><span class="mono-tile">AZ</span><span>Azure</span></div>
-          <div class="lg" style="--brand:#232F3E"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-amazonwebservices"/></svg><span>AWS</span></div><div class="lg" style="--brand:#4169E1"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-postgresql"/></svg><span>PostgreSQL</span></div><div class="lg" style="--brand:#47A248"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mongodb"/></svg><span>MongoDB</span></div><div class="lg" style="--brand:#3FCF8E"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-supabase"/></svg><span>Supabase</span></div><div class="lg" style="--brand:#000000"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-vercel"/></svg><span>Vercel</span></div><div class="lg" style="--brand:#F05032"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-git"/></svg><span>Git</span></div><div class="lg" style="--brand:#02303A"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-gradle"/></svg><span>Gradle</span></div><div class="lg" style="--brand:#C71A36"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apachemaven"/></svg><span>Maven</span></div>
-          <div class="lg"><span class="mono-tile">Z</span><span>Zowe SDK</span></div>
+          <div class="lg" style="--brand:#B59AFF"><span class="mono-tile">TF</span><span>Terraform</span></div>
+          <div class="lg"><span class="mono-tile">BI</span><span>Bicep</span></div>
+          <div class="lg"><span class="mono-tile">DK</span><span>Docker</span></div>
+          <div class="lg"><span class="mono-tile">CA</span><span>Container Apps</span></div>
+          <div class="lg"><span class="mono-tile">CR</span><span>Container Registry</span></div>
+          <div class="lg"><span class="mono-tile">VM</span><span>Azure VMs</span></div>
+          <div class="lg"><span class="mono-tile">VN</span><span>VNets &amp; NSGs</span></div>
+          <div class="lg"><span class="mono-tile">MI</span><span>Managed Identity</span></div>
+          <div class="lg"><span class="mono-tile">RB</span><span>Azure RBAC</span></div>
+          <div class="lg"><span class="mono-tile">AM</span><span>Azure Monitor</span></div>
+          <div class="lg"><span class="mono-tile">LA</span><span>Log Analytics</span></div>
+          <div class="lg" style="--brand:#C4A1FF"><span class="mono-tile">GH</span><span>GitHub Actions</span></div>
+          <div class="lg"><span class="mono-tile">ID</span><span>OIDC</span></div>
+          <div class="lg" style="--brand:#79D5B0"><span class="mono-tile">SH</span><span>Bash</span></div>
         </div>
       </div>
       <div>
